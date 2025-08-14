@@ -1,28 +1,19 @@
 # Пайплайн обработки
-
+```
 Connectors(IMAP/SES/API)
-
    → Fetcher
-   
       → MIME Normalizer (HTML→text, PDF→text+OCR, IMG→OCR)
-      
          → Signature & Dedup (content_id)
-         
             → Source Canonicalizer (broker, analyst)
-            
                → Ticker Mapper (NER→ticker map)
-               
                   → Classifier (note_type: market|sector|stock, rec_type)
-                  
                      → Extractor (rating/TP/horizon/key_bullets)
-                     
                         → QA Guard (rules+LLM check)
-                        
                            → Persist (DB + blob store)
-                           
                               → Publish (NEXUS feed + Web index)
+```
 
-Ключевые блоки:
+### Ключевые блоки:
 
 Connectors: IMAP (Gmail/Office365), AWS SES Inbound, SFTP/HTTP дропбоксы.
 
