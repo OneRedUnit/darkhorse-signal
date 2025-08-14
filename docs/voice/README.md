@@ -42,7 +42,8 @@ Persist/Publish: RDBMS + blob‑хранилище; индексация пол�
 
 ## Структура кода (/src/voice)
 
-```src/voice/
+```
+src/voice/
 ├─ README.md
 ├─ run.py                 # cli: fetch|ingest|rebuild|export
 ├─ connectors/
@@ -78,4 +79,5 @@ Persist/Publish: RDBMS + blob‑хранилище; индексация пол�
 │  └─ app/                # минимальный UI (FastAPI templates/Next.js)
 └─ export/
    ├─ nexus_feed.py       # JSON for NEXUS
-   └─ snapshots.py```
+   └─ snapshots.py
+```
