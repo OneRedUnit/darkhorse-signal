@@ -1,0 +1,38 @@
+project: DARKHORSE SIGNAL
+time_zone: Europe/Riga
+
+universe:
+  - AAPL
+  - MSFT
+  - NVDA
+
+scheduling:
+  premarket:
+    utc: "04:30"
+  postmarket:
+    utc: "15:00"
+
+domains:
+  enabled: [PULSE, PATTERN, VOICE, WAVES, STREAM]
+
+fusion:
+  weights:
+    PULSE:   0.22
+    PATTERN: 0.26
+    VOICE:   0.18
+    WAVES:   0.14
+    STREAM:  0.20
+  calibration: isotonic
+  thresholds:
+    buy: 0.60
+    sell: -0.60
+    watch: [-0.20, 0.20]
+  min_confidence: 0.55
+  include_explanations: true
+
+output:
+  path: artifacts/
+  formats: [md, html, json]
+
+logging:
+  level: INFO
